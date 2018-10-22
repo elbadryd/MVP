@@ -4,10 +4,12 @@ CREATE DATABASE test;
 
 USE test;
 
-CREATE TABLE items (
+CREATE TABLE reviews (
   id int NOT NULL AUTO_INCREMENT,
-  quantity integer NOT NULL,
-  description varchar(50) NOT NULL,
+  guestName varchar(15) NOT NULL,
+  brewery varchar(20) NOT NULL,
+  beer varchar(20) NOT NULL,
+  review varchar(150) NOT NULL,
   PRIMARY KEY (ID)
 );
 

@@ -4,11 +4,11 @@ var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : 'FILL_ME_IN',
-  database : 'test'
+  database : 'reviews'
 });
 
 var selectAll = function(callback) {
-  connection.query('SELECT * FROM items', function(err, results, fields) {
+  connection.query('SELECT * FROM reviews', function(err, results, fields) {
     if(err) {
       callback(err, null);
     } else {
