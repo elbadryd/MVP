@@ -13,7 +13,7 @@ angular.module('app')
     console.log(this.breweries)
   }.bind(this);
   this.updateReviews = function (reviews) {
-    //query db render reviews;
+    this.reviews = reviews;
   }
 })
 .component('app', {

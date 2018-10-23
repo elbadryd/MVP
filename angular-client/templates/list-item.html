@@ -1,4 +1,5 @@
-<li class="brewery-list-item"> {{$ctrl.brewery.name}}
+<li class="brewery-list-item"> 
+    {{$ctrl.brewery.name}}
   {{$ctrl.brewery.street}}
-  {{$ctrl.brewery.website_url}}
+  <a href="{{$ctrl.brewery.website_url}}">{{$ctrl.brewery.website_url}}</a>
 </brewery-list-item>
