@@ -24,29 +24,32 @@ app.get('/reviews', function (req, res) {
 
 
 //make api call for breweries 
-app.get('/breweries', function (req, res){
-    const options = {
-      url: 'https://api.openbrewerydb.org/breweries',
-      city: req.body.city,
-      state: req.body.state,
-      method: 'GET',
-      headers: {
-        'User-Agent': 'request',
-      },
+app.get('/breweries',function (req, res){
+  const options = {
+    url: 'https://api.openbrewerydb.org/breweries',
+    qs: {
+      //will need to change, works on postman for now
+      by_city: req.query.by_city,
+      by_state: req.query.by_state,
+    }, method: 'GET',
+    headers: {
+      'User-Agent': 'request',
+    },
   }
-  request(options, function (err, res, body) {
-    if (err) {
-      console.log('error reaching brew api')
-    } else {
-      //may need callback
-     res.send(body);
+
+  const callback = (error, body) => {
+    if (error) {
+      res.status(404);
     }
-  })
+    console.log(body);
+    res.status(200).send(body);
+  }
+  request(options, callback);
 })
 
-app.get('/', function(request, response){
-  response.render('angular-client/index.html')
-})
+// app.get('/', function(request, response){
+//   response.render('angular-client/index.html')
+// })
 let port = 3000;
 app.listen(process.env.PORT || port, function() {
   console.log('listening on port 3000!');
