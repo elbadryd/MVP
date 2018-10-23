@@ -1,8 +1,9 @@
 angular.module('app')
 .component('listItem', {
   bindings: {
-    item: '<',
+    brewery: '<',
   },
-  controller: function() {},
+  controller: function() {
+  },
   templateUrl: '/templates/list-item.html'
 });

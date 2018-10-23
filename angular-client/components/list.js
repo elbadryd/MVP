@@ -3,6 +3,8 @@ angular.module('app')
   bindings: {
     items: '<',
   },
-  controller: function() {},
+  controller: function() {
+    console.log(this.items)
+  },
   templateUrl: '/templates/list.html'
 });

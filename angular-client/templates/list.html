@@ -1,5 +1,5 @@
-<div>
+<ul class="brewery-list">
   <h4> List Component </h4>
-  There are {{$ctrl.items.length}} items.
-  <list-item ng-repeat="item in $ctrl.items" item=item />
-</div>
+  There are {{$ctrl.items.length}} breweries.
+  <list-item ng-repeat="item in $ctrl.items" brewery="item" />
+</brewery-item>
