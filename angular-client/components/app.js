@@ -8,13 +8,16 @@ angular.module('app')
   // this.searchResults = function (input) {
   //   brew.getAll(input, this.updateBrews);
   // }.bind(this);
+  // this.$onInit = function(){
+  //   reviews.getReviews(this.updateReviews)
+  // }.bind(this)
   this.updateBrews = function (brews) {
     this.breweries = JSON.parse(brews.data.body);
     console.log(this.breweries)
   }.bind(this);
   this.updateReviews = function (reviews) {
     this.reviews = reviews;
-  }
+  }.bind(this);
 })
 .component('app', {
   bindings: {},

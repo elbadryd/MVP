@@ -5,7 +5,8 @@ angular.module('app')
     },
     controller: function (brew) {
       this.search = function () {
-        brew.getAll(this.input, this.update);
+        console.log(this)
+        brew.getAll(this.input, this.input2, this.update);
       };
     },    templateUrl: '/templates/search.html'
   });
