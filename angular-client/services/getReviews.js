@@ -1,9 +1,13 @@
 angular.module('app')
-.service('reviews', function($http) {
+.service('revs', function($http) {
    this.getReviews = function(callback) {
-    $http.get('/', {
-      async: true,
-      crossDomain: true,
+    $http({
+      url: '/items',
+      method: 'GET',
+      headers: {
+        async: true,
+        crossDomain: true,
+      }
     }).then(function(data) {
         console.log(data, 'got reviews from db');
         callback(data);

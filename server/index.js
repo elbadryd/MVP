@@ -69,15 +69,17 @@ app.get('/breweries',function (req, res){
   request(options, callback);
 })
 
-// app.get('/', function(request, response){
-//   db.connection(select.selectAll((err, data)=>{
-//     if (err){
-//       console.log('database error')
-//     } else {
-//       res.send(data)
-//     }
-//   }));
-// })
+app.get('/items', function(req, res){
+  db.query('SELECT * FROM reviews', function (err, results) {
+    if (err) {
+      res.status(404);
+      console.log(err)
+    } else {
+      console.log('got to get / router')
+     res.send(results);
+    }
+  });
+})
 let port = 3000;
 app.listen(process.env.PORT || port, function() {
   console.log('listening on port 3000!');

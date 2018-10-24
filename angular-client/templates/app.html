@@ -1,16 +1,18 @@
 <div>
   <div>
-    <div>
       <search update="$ctrl.updateBrews" >
         <h5><em>search</em> component goes here</h5>
       </search>
   </div>
+
   <div>
-    <review update="$ctrl.updateReviews">
+    <review update="$ctrl.updateReviews" list="$ctrl.reviews">
       <h5><em>write a review</em> component goes here</h5>
     </review>
   </div>
   <div>
-    <list items="$ctrl.breweries"/>
+<list items="$ctrl.breweries" />
   </div>
-</div>
+  </div>
+   
+ 

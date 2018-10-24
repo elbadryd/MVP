@@ -4,7 +4,7 @@ angular.module('app')
     items: '<',
   },
   controller: function() {
-    console.log(this.items)
+
   },
   templateUrl: '/templates/list.html'
 });

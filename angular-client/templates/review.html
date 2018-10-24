@@ -8,4 +8,17 @@
   <button class="btn" ng-click="$ctrl.updateReviews()">
     <span class="glyphicon glyphicon-search"></span>
   </button>
+  <div class="main">
+  <div class="review-list">
+    <h4> Review List </h4>
+    There are {{$ctrl.list.length}} reviews.
+    <br>
+<ul>
+ 
+        <review-list-item ng-repeat="item in $ctrl.list" review="item" />
+      </ul>
+    
+  
+  </review-list>
+  </div>
 </div>
